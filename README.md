@@ -76,6 +76,12 @@ Follow the following steps if you want to try the model on your own:
 
 ## 🧾 Output and Results 
 
+| Signal Type | Model Used                          | Accuracy                                  |
+|-------------|-------------------------------------|-------------------------------------------|
+| ECG         | CNN                                 | 93.32%                                    |
+| PPG         | Random Forest                       | 96%                                       |
+| PCG         | BiLSTM                              | 96%                                       |
+
 
 
 If any queries: aryanmatte2023@gmail.com

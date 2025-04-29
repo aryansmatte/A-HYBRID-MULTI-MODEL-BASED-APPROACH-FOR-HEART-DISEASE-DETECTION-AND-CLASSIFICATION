@@ -22,6 +22,12 @@ During our literature review, we observed that most research papers focused on *
 Follow the following steps if you want to try the model on your own:
 
 1. **Clone the Repository**
+
    ```bash
    git clone https://github.com/aryansmatte/A-HYBRID-MULTI-MODEL-BASED-APPROACH-FOR-HEART-DISEASE-DETECTION-AND-CLASSIFICATION
+
+2. **Navigate to Frontend_and_Backend folder**
+
+   ```bash
+   cd Frontend_and_Backend
 

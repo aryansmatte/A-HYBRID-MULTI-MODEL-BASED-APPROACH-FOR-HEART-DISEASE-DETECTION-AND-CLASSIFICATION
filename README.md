@@ -1,4 +1,4 @@
-# 🫀 Heart Disease Detection using Integrated ECG, PCG, and PPG Signals
+# 🫀 A HYBRID MULTI-MODEL BASED APPROACH FOR HEART DISEASE DETECTION AND CLASSIFICATION
 
 ## 📌 Overview
 

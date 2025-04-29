@@ -31,3 +31,47 @@ Follow the following steps if you want to try the model on your own:
    ```bash
    cd Frontend_and_Backend
 
+3. **Move to app folder which consist of frontend landing page index.html**
+
+   ```bash
+   cd app
+   
+4. **Navigate to INTGRATION folder which has main model code**
+
+   ```bash
+   cd INTGRATION
+
+5. **Download virtual environment .venv int this folder**
+
+   ```bash
+    python -m venv .venv
+
+6. **Install the requiremnts file**
+
+   ```bash
+   pip install -r requirements.txt
+
+7. **If any error persist for pip**
+
+   ```bash
+   pip install --upgrade pip
+
+8. **If any error related to openpyxl**
+
+   ```bash
+   pip install openpyxl
+   pip install --force-reinstall openpyxl
+
+9. **Activate the virtual environment**
+
+    ```bash
+    .venv\Scripts\Activate
+
+10. **Run the backend file may take 2-3 minutes**
+
+    ```bash
+    python app.py
+
+11. **In app folder you cn start the frontend landing page by clicking on it and navigate to Fusion option there to go to the model implementation and VScode might give some error so directly open the index.html from folder with chrome** 
+
+

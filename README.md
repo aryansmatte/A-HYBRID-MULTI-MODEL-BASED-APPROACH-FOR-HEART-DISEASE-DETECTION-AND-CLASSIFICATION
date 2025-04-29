@@ -16,3 +16,12 @@ During our literature review, we observed that most research papers focused on *
 4. **Model Integration**: Then by using the above model files we integrated the model and add mathematical algorithm to calculate risk score based on confidence score received from each model and converted it to python `.py` file.
 5. **Backend Development (Flask API)**: In the above `.py` files we created a **Flask API** that loads all three models and handles inference. It also helps to connect to frontend and when user uploads data(images, audio and csv) it sends to backend through this API and after computing the output is send back to frontend as **JSON** file.
 6. **Frontend Integration (HTML, CSS, JavaScript)**: Designed a simple frontend layout where users can interact with the model and upload data and get output.
+
+## ⚙️ How to Run the Project
+
+Follow the following steps if you want to try the model on your own:
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name

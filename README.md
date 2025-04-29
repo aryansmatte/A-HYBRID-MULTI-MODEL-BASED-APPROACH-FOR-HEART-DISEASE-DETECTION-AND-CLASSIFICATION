@@ -77,6 +77,7 @@ Follow the following steps if you want to try the model on your own:
 ## 🧾 Output and Results 
 
 
-                                          If require any help you can contact me aryanmatte2023@gmail.com
+
+If any queries: aryanmatte2023@gmail.com
 
 

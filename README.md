@@ -72,6 +72,8 @@ Follow the following steps if you want to try the model on your own:
     ```bash
     python app.py
 
-11. **In app folder you cn start the frontend landing page by clicking on it and navigate to Fusion option there to go to the model implementation and VScode might give some error so directly open the index.html from folder with chrome** 
+11. **In app folder you can start the frontend landing page by clicking on it and navigate to Fusion option to go to the model implementation and VScode might give some error so directly open the index.html from folder with chrome** 
+
+## 🧾 Output and Results 
 
 

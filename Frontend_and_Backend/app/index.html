@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEART CHECKER</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="nav">
+        <img src="./logo.png" alt="LOGO">
+        <h4>CHECKUP</h4>
+        <h4>CONSULT</h4>
+        <h4>NEWS</h4>
+        <h4>CONTACT</h4>
+        
+            <a href="https://colab.research.google.com/drive/1baV99hH4ZS7WkKF5MAJBqJ1xKWOzvNDx" target="_blank">Source Code</a>
+       
+        
+    </div>
+    
+    <video id="backgroundVideo" autoplay loop muted>
+        <source src="./heart.mp4" type="video/mp4">
+      </video>
+    <div id="main">
+        <div id="page1">
+            <h1>CHECK YOUR HEART HEALTH IN SECONDS</h1>
+            <h2>Welcome to Heat Disease Classifier</h2>
+            <p>Experience the cardiac health assessment with our diagnostic system. By analyzing ECG signals, PPG data in CSV format, and PCG waveforms, our model provides accurate insights into heart conditions. Witness how technology transforms raw medical data into meaningful diagnoses, enabling early detection and improved patient care.</p>
+               
+        </div>
+        <div id="page2" id="checkup-section">
+            <div id="checkup">
+                <h1>CHECKUP</h1>
+            </div>
+        
+            <div id="about-us">
+               <a href="./ECG.html"> <div class="img-container">
+                    <img src="./1.jpg" alt="">
+                    <span class="overlay-text">ECG</span>
+                </div></a>
+               <a href="#"> <div class="img-container">
+                    <img src="./2.jpg" alt="">
+                    <span class="overlay-text">PCG</span>
+                </div></a>
+                <a href="#"><div class="img-container">
+                    <img src="./3.jpg" alt="">
+                    <span class="overlay-text">PPG</span>
+                </div></a>
+                <a href="./INTGRATION/index.html"><div class="img-container">
+                    <img src="./4.jpg" alt="">
+                    <span class="overlay-text">Fusion</span>
+                </div></a>
+            </div>
+        </div>        
+      
+           
+            
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          let video = document.getElementById("backgroundVideo");
+          video.playbackRate = 0.5; // Adjust this value (1 is normal speed, 0.5 is half speed)
+        });
+      </script>
+</body>
+
+</html>

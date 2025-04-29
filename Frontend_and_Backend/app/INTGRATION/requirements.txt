@@ -1,0 +1,10 @@
+numpy
+librosa
+torch 
+torchvision
+torchaudio
+opencv-python
+pandas
+flask
+flask-cors
+tensorflow

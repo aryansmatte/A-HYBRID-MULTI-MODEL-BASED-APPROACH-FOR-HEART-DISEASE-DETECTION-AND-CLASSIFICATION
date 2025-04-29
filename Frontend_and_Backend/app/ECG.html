@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECG Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #000;
+        }
+        #preview {
+            
+            height: 500px;
+            object-fit: cover;
+            border: 2px solid #ddd;
+            padding: 3px 3px;
+    border-radius: 6px;
+            margin-top: 33px;
+            color: white;
+        }
+        #result {
+           
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 25px;
+
+        }
+        h2{
+            color: #fff;
+            font-size: 50px;
+        }
+        p{
+            color: white;
+        }
+        input{
+            background-color: #c22edb;
+            padding: 15px 20px;
+    font-size: 21px;
+    color: white;
+    border-radius: 20px;
+        }
+        button{
+            margin: 18px;
+    font-size: 20px;
+    background-color: #1bd41b;
+    border-radius: 10px;
+    padding: 4px 13px;
+
+        }
+    </style>
+</head>
+<body>
+
+    <h2>ECG Disease Prediction</h2>
+    <input type="file" id="imageUpload" accept="image/*">
+    <br>
+    <img id="preview" src="" alt="Image Preview">
+    <br>
+    <button onclick="uploadImage()">Predict</button>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById("imageUpload").onchange = function(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                document.getElementById("preview").src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        };
+
+        function uploadImage() {
+            let fileInput = document.getElementById("imageUpload").files[0];
+            if (!fileInput) {
+                alert("Please select an image.");
+                return;
+            }
+
+            let formData = new FormData();
+            formData.append("file", fileInput);
+
+            fetch("http://127.0.0.1:5000/predict", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result").innerText = "Prediction: " + data.prediction;
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Failed to get prediction.");
+            });
+        }
+    </script>
+
+</body>
+</html>

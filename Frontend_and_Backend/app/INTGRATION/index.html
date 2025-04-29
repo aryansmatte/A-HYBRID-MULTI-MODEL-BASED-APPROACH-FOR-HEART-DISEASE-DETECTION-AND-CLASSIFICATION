@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            height: 100vh;
+            background: url('hybrid_bg.jpg') fixed no-repeat center center;
+            background-size: cover;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+            margin: 100px auto;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: left;
+            color: white;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: left;
+            color: white;
+        }
+
+        .highlight {
+            font-weight: bold;
+        }
+
+        .red {
+            color: red;
+        }
+
+        .green {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Upload Files for Prediction</h2>
+        <form id="uploadForm">
+            <label>Upload ECG Image:</label>
+            <input type="file" id="ecg" accept="image/*" required>
+
+            <label>Upload PPG File (CSV/XLSX):</label>
+            <input type="file" id="ppg" accept=".csv,.xlsx" required>
+
+            <label>Upload Audio File:</label>
+            <input type="file" id="audio" accept="audio/*" required>
+
+            <button type="button" onclick="predict()">Predict</button>
+        </form>
+
+        <div id="result"></div>
+
+       
+
+    </div>
+   <div> <img src="table.png" alt="Description of image" style="width: 44%;
+    height: 10%;"/>
+   </div>
+
+    <script>
+        document.getElementById("uploadForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission and page refresh
+            predict();
+        });
+    
+        function predict() {
+            let ecgFile = document.getElementById("ecg").files[0];
+            let ppgFile = document.getElementById("ppg").files[0];
+            let audioFile = document.getElementById("audio").files[0];
+    
+            if (!ecgFile || !ppgFile || !audioFile) {
+                alert("Please upload all required files.");
+                return;
+            }
+    
+            let formData = new FormData();
+            formData.append("ecg_image", ecgFile);
+            formData.append("ppg_file", ppgFile);
+            formData.append("audio_file", audioFile);
+    
+            fetch("http://127.0.0.1:5000/predict", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Server returned an error.");
+                }
+                return response.json();
+            })
+            .then(data => {
+                function getColor(category, value) {
+                    if (category === "Audio" && value === "Healthy") return "green";
+                    if (category === "Audio" && value === "Unhealthy") return "red";
+                    if (category === "ECG" && (value === "MI" || value === "PMI" || value === "Abnormal Heart Beats")) return "red";
+                    if (category === "ECG" && value === "Normal") return "green";
+                    if (category === "PPG" && value === "Normal") return "green";
+                    if (category === "PPG" && value === "MI") return "red";
+                    return "white";
+                }
+    
+                document.getElementById("result").innerHTML = `
+                    <h3>Prediction Results</h3>
+                    <p><strong>Audio Result:</strong> 
+                        <span class="highlight ${getColor("Audio", data["Audio Result"])}">${data["Audio Result"]}</span>
+                        
+                    </p>
+                    <p><strong>ECG Result:</strong> 
+                        <span class="highlight ${getColor("ECG", data["ECG Result"])}">${data["ECG Result"]}</span>
+                        
+                    </p>
+                    <p><strong>PPG Result:</strong> 
+                        <span class="highlight ${getColor("PPG", data["PPG Result"])}">${data["PPG Result"]}</span>
+                        
+                    </p>
+                    <p><strong>Final Risk Score:</strong> ${(data["Final Risk Score"] * 100).toFixed(2)}%</p>
+                `;
+            })
+            .catch(error => {
+                console.error("Fetch error:", error);
+                document.getElementById("result").innerHTML = `<p style="color:red;">Error: ${error.message}</p>`;
+            });
+        }
+    </script>
+    
+
+</body>
+</html>

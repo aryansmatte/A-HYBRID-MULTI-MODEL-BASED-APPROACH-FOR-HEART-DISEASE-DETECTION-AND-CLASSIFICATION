@@ -107,7 +107,7 @@ Following steps need to be followed:
 
    
 
-                                                                              !!! THANK YOU !!!
+                                                            !!! THANK YOU !!!
 
 If any queries: aryanmatte2023@gmail.com
 

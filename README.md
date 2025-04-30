@@ -10,12 +10,12 @@ During our literature review, we observed that most research papers focused on *
 
 ## 🛤️ Project Workflow
 
-1. **Data Collection**: Firstly we collected all the required dataset for model training and validtion from **Kaggle datasets** present on google.
-2. **Model Training (Jupyter Notebook/Colab)**: We trained the **ECG** model using **Convolutional Neural Network (CNN)** for image processing, **PPG** model using **Random Forest Classifier** for time-series data signals stored as csv file and **PCG** we used **Bidirectional Long Short-Term Memory (Bi-LSTM)** for audio classification.
-3. **Model Saving**: After training each model we saved the best observed model as `best_ecg_cnn.pth` and `ecg_model.h5` for ECG, `scaler.pkl` and `label_encoder.pkl` for PPG and finally `SOUND_LSTM_model.h5`.
-4. **Model Integration**: Then by using the above model files we integrated the model and add mathematical algorithm to calculate risk score based on confidence score received from each model and converted it to python `.py` file.
-5. **Backend Development (Flask API)**: In the above `.py` files we created a **Flask API** that loads all three models and handles inference. It also helps to connect to frontend and when user uploads data(images, audio and csv) it sends to backend through this API and after computing the output is send back to frontend as **JSON** file.
-6. **Frontend Integration (HTML, CSS, JavaScript)**: Designed a simple frontend layout where users can interact with the model and upload data and get output.
+1. **Data Collection**: We first collected all the required datasets for model training and validation from **Kaggle datasets** and Google.
+2. **Model Training (Jupyter Notebook/Colab)**: We trained the **ECG** model using **Convolutional Neural Network (CNN)** for image processing, **PPG** model using **Random Forest Classifier** for time-series data signals stored as CSV file and for **PCG**, we used **Bidirectional Long Short-Term Memory (Bi-LSTM)** for audio classification.
+3. **Model Saving**: After training each model we saved the best-performing model as `best_ecg_cnn.pth` and `ecg_model.h5` for ECG, `scaler.pkl` and `label_encoder.pkl` for PPG and finally `SOUND_LSTM_model.h5`.
+4. **Model Integration**: Using the saved model files, we integrated the model and applied a mathematical algorithm to calculate risk score based on confidence score received from each model and converted it to python `.py` file.
+5. **Backend Development (Flask API)**: In the above `.py` files we created a **Flask API** that loads all three models and handles inference. It also helps to connect to frontend. When a user uploads data(images, audio and csv) it sends to backend through this API and after computing the output is sent back to frontend as **JSON** file.
+6. **Frontend Integration (HTML, CSS, JavaScript)**: Designed a simple frontend layout where users can interact with the model and upload data and receive the output.
 
 ## ⚙️ How to Run the Project
 
@@ -46,12 +46,12 @@ Following steps need to be followed:
    ```bash
     python -m venv .venv
 
-6. **Install the requiremnts file**
+6. **Install the requirements file**
 
    ```bash
    pip install -r requirements.txt
 
-7. **If any error persist for pip**
+7. **If any error persists for pip**
 
    ```bash
    pip install --upgrade pip
@@ -67,12 +67,12 @@ Following steps need to be followed:
     ```bash
     .venv\Scripts\Activate
 
-10. **Run the backend file may take 2-3 minutes**
+10. **Running the backend file may take 2-3 minutes**
 
     ```bash
     python app.py
 
-11. **In app folder you can start the frontend landing page by clicking on `index.html` and navigate to Fusion option to go to the model implementation as in VScode some error might occur due to which output will not be displayed on frontend.** 
+11. **In app folder you can start the frontend landing page by clicking on `index.html` and navigate to the Fusion option to access model predictions. (Note: In VS Code, frontend output might not render due to internal preview limitations.)** 
 
 ## 🧾 Output and Results 
 
@@ -88,7 +88,7 @@ Following steps need to be followed:
 
    ![Image](https://github.com/user-attachments/assets/88888667-dc1c-4ab0-90ab-febbff4c48c8)
 
-   ### After clicking Predict:
+   ### After clicking "Predict":
    ### 📤 Backend Output
 
    ![Image](https://github.com/user-attachments/assets/153c1f93-d2b1-44c2-8a4e-9978d76578c8)
@@ -107,8 +107,10 @@ Following steps need to be followed:
 
    
 
-                                                            !!! THANK YOU !!!
+<p align="center">!!! THANK YOU !!!</p>
 
-If any queries: aryanmatte2023@gmail.com
+
+📩 For any queries, feel free to reach out at:
+aryanmatte2023@gmail.com
 
 

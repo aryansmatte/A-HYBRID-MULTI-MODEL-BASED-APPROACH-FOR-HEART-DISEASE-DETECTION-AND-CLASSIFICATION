@@ -41,7 +41,7 @@ Follow the following steps if you want to try the model on your own:
    ```bash
    cd INTGRATION
 
-5. **Download virtual environment .venv int this folder**
+5. **Download virtual environment .venv in this folder**
 
    ```bash
     python -m venv .venv
@@ -75,16 +75,39 @@ Follow the following steps if you want to try the model on your own:
 11. **In app folder you can start the frontend landing page by clicking on it and navigate to Fusion option to go to the model implementation and VScode might give some error so directly open the index.html from folder with chrome** 
 
 ## 🧾 Output and Results 
-   ## Video
+
+   ### 🚀 User Interface Video
+   
    https://github.com/user-attachments/assets/ed198f7b-32d7-4a57-9298-7fa7144f970c
 
-| Signal Type | Model Used                          | Accuracy                                  |
-|-------------|-------------------------------------|-------------------------------------------|
-| ECG         | CNN                                 | 93.32%                                    |
-| PPG         | Random Forest                       | 96%                                       |
-| PCG         | BiLSTM                              | 96%                                       |
+   ### 🚀 Starting Backend 
 
+   ![Image](https://github.com/user-attachments/assets/c5014288-6344-4c36-9472-43d8d5777917)
 
+   ### 🌐 Frontend Input
+
+   ![Image](https://github.com/user-attachments/assets/88888667-dc1c-4ab0-90ab-febbff4c48c8)
+
+   ### After clicking Predict:
+   ### 📤 Backend Output
+
+   ![Image](https://github.com/user-attachments/assets/153c1f93-d2b1-44c2-8a4e-9978d76578c8)
+
+   ### 🔎 Frontend Output
+
+   ![Image](https://github.com/user-attachments/assets/a60c5484-a2f6-402a-9bc6-e65c2929ffc2)
+  
+   ### 📊 Each Model Accuracy 
+   
+   | Signal Type | Model Used                          | Accuracy                                  |
+   |-------------|-------------------------------------|-------------------------------------------|
+   | ECG         | CNN                                 | 93.32%                                    |
+   | PPG         | Random Forest                       | 96%                                       |
+   | PCG         | BiLSTM                              | 96%                                       |
+
+   
+
+                                                                              !!! THANK YOU !!!
 
 If any queries: aryanmatte2023@gmail.com
 

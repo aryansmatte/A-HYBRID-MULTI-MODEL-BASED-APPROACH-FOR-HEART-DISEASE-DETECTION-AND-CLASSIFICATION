@@ -75,6 +75,8 @@ Follow the following steps if you want to try the model on your own:
 11. **In app folder you can start the frontend landing page by clicking on it and navigate to Fusion option to go to the model implementation and VScode might give some error so directly open the index.html from folder with chrome** 
 
 ## 🧾 Output and Results 
+   ## Video
+   https://github.com/user-attachments/assets/ed198f7b-32d7-4a57-9298-7fa7144f970c
 
 | Signal Type | Model Used                          | Accuracy                                  |
 |-------------|-------------------------------------|-------------------------------------------|

@@ -19,7 +19,7 @@ During our literature review, we observed that most research papers focused on *
 
 ## ⚙️ How to Run the Project
 
-Follow the following steps if you want to try the model on your own:
+Following steps need to be followed:
 
 1. **Clone the Repository**
 

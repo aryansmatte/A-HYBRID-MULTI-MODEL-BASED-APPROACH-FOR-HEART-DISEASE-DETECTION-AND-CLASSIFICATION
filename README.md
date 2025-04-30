@@ -72,7 +72,7 @@ Following steps need to be followed:
     ```bash
     python app.py
 
-11. **In app folder you can start the frontend landing page by clicking on it and navigate to Fusion option to go to the model implementation and VScode might give some error so directly open the index.html from folder with chrome** 
+11. **In app folder you can start the frontend landing page by clicking on `index.html` and navigate to Fusion option to go to the model implementation as in VScode some error might occur due to which output will not be displayed on frontend.** 
 
 ## 🧾 Output and Results 
 

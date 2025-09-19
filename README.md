@@ -116,7 +116,6 @@ Following steps need to be followed:
 <p align="center">!!! THANK YOU !!!</p>
 
 
-📩 For any queries, feel free to reach out at:
-aryanmatte2023@gmail.com
+
 
 
